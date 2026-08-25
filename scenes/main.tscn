@@ -1,0 +1,306 @@
+[gd_scene format=3 uid="uid://c5l6solavx30n"]
+
+[ext_resource type="Script" uid="uid://dx6bgucosb0mb" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/block.tscn" id="3_block"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
+size = Vector2(70, 60)
+
+[node name="Main" type="Node2D" unique_id=1691361380]
+script = ExtResource("1_main")
+
+[node name="Player" parent="." unique_id=1151651846 instance=ExtResource("2_player")]
+position = Vector2(576, 520)
+
+[node name="Environment" type="Node2D" parent="." unique_id=1647681346]
+
+[node name="Wall" parent="Environment" unique_id=416014639 instance=ExtResource("3_block")]
+position = Vector2(1111, -2176)
+rotation = 1.5707964
+scale = Vector2(4.755, 1)
+size = Vector2(1152, 80)
+
+[node name="Wall2" parent="Environment" unique_id=938924848 instance=ExtResource("3_block")]
+position = Vector2(40, -2173.0002)
+rotation = 1.5707963
+scale = Vector2(4.755, 1)
+size = Vector2(1152, 80)
+
+[node name="Ground" parent="Environment" unique_id=394957914 instance=ExtResource("3_block")]
+position = Vector2(576, 600)
+size = Vector2(1152, 80)
+
+[node name="Step1" parent="Environment" unique_id=662764401 instance=ExtResource("3_block")]
+position = Vector2(820, 470)
+size = Vector2(240, 24)
+
+[node name="FearGap" parent="Environment" unique_id=1843666379 instance=ExtResource("3_block")]
+position = Vector2(340, 374)
+size = Vector2(220, 24)
+
+[node name="KnockbackWall" parent="Environment" unique_id=1096691453 instance=ExtResource("3_block")]
+position = Vector2(800, 115)
+kind = 2
+size = Vector2(60, 60)
+
+[node name="KnockbackWall2" parent="Environment" unique_id=225997349 instance=ExtResource("3_block")]
+position = Vector2(812, -371)
+kind = 2
+size = Vector2(60, 60)
+
+[node name="JoyLedge" parent="Environment" unique_id=833875658 instance=ExtResource("3_block")]
+position = Vector2(630, 260)
+size = Vector2(220, 24)
+
+[node name="Step2" parent="Environment" unique_id=356492284 instance=ExtResource("3_block")]
+position = Vector2(328, 201)
+size = Vector2(220, 24)
+
+[node name="Step3" parent="Environment" unique_id=813938070 instance=ExtResource("3_block")]
+position = Vector2(863, 10)
+size = Vector2(220, 24)
+
+[node name="Step4" parent="Environment" unique_id=228791753 instance=ExtResource("3_block")]
+position = Vector2(191, 3)
+size = Vector2(220, 24)
+
+[node name="CrackedWall" parent="Environment" unique_id=690166071 instance=ExtResource("3_block")]
+position = Vector2(360, 138)
+kind = 1
+size = Vector2(160, 22)
+
+[node name="ChimneyLeft" parent="Environment" unique_id=456964134 instance=ExtResource("3_block")]
+position = Vector2(520, 40)
+size = Vector2(30, 220)
+
+[node name="ChimneyRight" parent="Environment" unique_id=1816367981 instance=ExtResource("3_block")]
+position = Vector2(640, 40)
+size = Vector2(30, 220)
+
+[node name="Climb0" parent="Environment" unique_id=900000000 instance=ExtResource("3_block")]
+position = Vector2(870, -176)
+size = Vector2(200, 24)
+
+[node name="Climb1" parent="Environment" unique_id=900000001 instance=ExtResource("3_block")]
+position = Vector2(603, -239)
+size = Vector2(200, 24)
+
+[node name="Climb2" parent="Environment" unique_id=900000002 instance=ExtResource("3_block")]
+position = Vector2(883, -426)
+scale = Vector2(1, 0.7579774)
+size = Vector2(200, 24)
+
+[node name="Climb3" parent="Environment" unique_id=900000003 instance=ExtResource("3_block")]
+position = Vector2(230, -340)
+size = Vector2(50, 50)
+
+[node name="Climb5" parent="Environment" unique_id=900000005 instance=ExtResource("3_block")]
+position = Vector2(633, -540)
+size = Vector2(200, 24)
+
+[node name="Climb6" parent="Environment" unique_id=900000006 instance=ExtResource("3_block")]
+position = Vector2(106, -543)
+size = Vector2(50, 50)
+
+[node name="Climb7" parent="Environment" unique_id=900000007 instance=ExtResource("3_block")]
+position = Vector2(670, -790)
+size = Vector2(200, 24)
+
+[node name="Climb8" parent="Environment" unique_id=900000008 instance=ExtResource("3_block")]
+position = Vector2(490, -880)
+size = Vector2(200, 24)
+
+[node name="Climb9" parent="Environment" unique_id=900000009 instance=ExtResource("3_block")]
+position = Vector2(670, -970)
+size = Vector2(200, 24)
+
+[node name="Climb10" parent="Environment" unique_id=900000010 instance=ExtResource("3_block")]
+position = Vector2(490, -1060)
+size = Vector2(200, 24)
+
+[node name="Climb11" parent="Environment" unique_id=900000011 instance=ExtResource("3_block")]
+position = Vector2(670, -1150)
+size = Vector2(200, 24)
+
+[node name="Climb12" parent="Environment" unique_id=900000012 instance=ExtResource("3_block")]
+position = Vector2(490, -1240)
+size = Vector2(200, 24)
+
+[node name="Climb13" parent="Environment" unique_id=900000013 instance=ExtResource("3_block")]
+position = Vector2(670, -1330)
+size = Vector2(200, 24)
+
+[node name="Climb14" parent="Environment" unique_id=900000014 instance=ExtResource("3_block")]
+position = Vector2(490, -1420)
+size = Vector2(200, 24)
+
+[node name="Climb15" parent="Environment" unique_id=900000015 instance=ExtResource("3_block")]
+position = Vector2(670, -1510)
+size = Vector2(200, 24)
+
+[node name="Climb16" parent="Environment" unique_id=900000016 instance=ExtResource("3_block")]
+position = Vector2(490, -1600)
+size = Vector2(200, 24)
+
+[node name="Climb17" parent="Environment" unique_id=900000017 instance=ExtResource("3_block")]
+position = Vector2(670, -1690)
+size = Vector2(200, 24)
+
+[node name="Climb18" parent="Environment" unique_id=900000018 instance=ExtResource("3_block")]
+position = Vector2(490, -1780)
+size = Vector2(200, 24)
+
+[node name="Climb19" parent="Environment" unique_id=900000019 instance=ExtResource("3_block")]
+position = Vector2(670, -1870)
+size = Vector2(200, 24)
+
+[node name="Climb20" parent="Environment" unique_id=900000020 instance=ExtResource("3_block")]
+position = Vector2(490, -1960)
+size = Vector2(200, 24)
+
+[node name="Climb21" parent="Environment" unique_id=900000021 instance=ExtResource("3_block")]
+position = Vector2(670, -2050)
+size = Vector2(200, 24)
+
+[node name="Climb22" parent="Environment" unique_id=900000022 instance=ExtResource("3_block")]
+position = Vector2(490, -2140)
+size = Vector2(200, 24)
+
+[node name="Climb23" parent="Environment" unique_id=900000023 instance=ExtResource("3_block")]
+position = Vector2(670, -2230)
+size = Vector2(200, 24)
+
+[node name="Climb24" parent="Environment" unique_id=900000024 instance=ExtResource("3_block")]
+position = Vector2(490, -2320)
+size = Vector2(200, 24)
+
+[node name="Climb25" parent="Environment" unique_id=900000025 instance=ExtResource("3_block")]
+position = Vector2(670, -2410)
+size = Vector2(200, 24)
+
+[node name="Climb26" parent="Environment" unique_id=900000026 instance=ExtResource("3_block")]
+position = Vector2(490, -2500)
+size = Vector2(200, 24)
+
+[node name="Climb27" parent="Environment" unique_id=900000027 instance=ExtResource("3_block")]
+position = Vector2(670, -2590)
+size = Vector2(200, 24)
+
+[node name="Climb28" parent="Environment" unique_id=900000028 instance=ExtResource("3_block")]
+position = Vector2(490, -2680)
+size = Vector2(200, 24)
+
+[node name="Climb29" parent="Environment" unique_id=900000029 instance=ExtResource("3_block")]
+position = Vector2(670, -2770)
+size = Vector2(200, 24)
+
+[node name="Climb30" parent="Environment" unique_id=900000030 instance=ExtResource("3_block")]
+position = Vector2(490, -2860)
+size = Vector2(200, 24)
+
+[node name="Climb31" parent="Environment" unique_id=900000031 instance=ExtResource("3_block")]
+position = Vector2(670, -2950)
+size = Vector2(200, 24)
+
+[node name="Climb32" parent="Environment" unique_id=900000032 instance=ExtResource("3_block")]
+position = Vector2(490, -3040)
+size = Vector2(200, 24)
+
+[node name="Climb33" parent="Environment" unique_id=900000033 instance=ExtResource("3_block")]
+position = Vector2(670, -3130)
+size = Vector2(200, 24)
+
+[node name="Climb34" parent="Environment" unique_id=900000034 instance=ExtResource("3_block")]
+position = Vector2(490, -3220)
+size = Vector2(200, 24)
+
+[node name="Climb35" parent="Environment" unique_id=900000035 instance=ExtResource("3_block")]
+position = Vector2(670, -3310)
+size = Vector2(200, 24)
+
+[node name="Climb36" parent="Environment" unique_id=900000036 instance=ExtResource("3_block")]
+position = Vector2(490, -3400)
+size = Vector2(200, 24)
+
+[node name="Climb37" parent="Environment" unique_id=900000037 instance=ExtResource("3_block")]
+position = Vector2(670, -3490)
+size = Vector2(200, 24)
+
+[node name="Climb38" parent="Environment" unique_id=900000038 instance=ExtResource("3_block")]
+position = Vector2(490, -3580)
+size = Vector2(200, 24)
+
+[node name="Climb39" parent="Environment" unique_id=900000039 instance=ExtResource("3_block")]
+position = Vector2(670, -3670)
+size = Vector2(200, 24)
+
+[node name="Climb40" parent="Environment" unique_id=900000040 instance=ExtResource("3_block")]
+position = Vector2(490, -3760)
+size = Vector2(200, 24)
+
+[node name="Climb41" parent="Environment" unique_id=900000041 instance=ExtResource("3_block")]
+position = Vector2(670, -3850)
+size = Vector2(200, 24)
+
+[node name="Climb42" parent="Environment" unique_id=900000042 instance=ExtResource("3_block")]
+position = Vector2(490, -3940)
+size = Vector2(200, 24)
+
+[node name="Climb43" parent="Environment" unique_id=900000043 instance=ExtResource("3_block")]
+position = Vector2(670, -4030)
+size = Vector2(200, 24)
+
+[node name="Climb44" parent="Environment" unique_id=900000044 instance=ExtResource("3_block")]
+position = Vector2(490, -4120)
+size = Vector2(200, 24)
+
+[node name="Climb45" parent="Environment" unique_id=900000045 instance=ExtResource("3_block")]
+position = Vector2(670, -4210)
+size = Vector2(200, 24)
+
+[node name="Climb46" parent="Environment" unique_id=900000046 instance=ExtResource("3_block")]
+position = Vector2(490, -4300)
+size = Vector2(200, 24)
+
+[node name="Climb47" parent="Environment" unique_id=900000047 instance=ExtResource("3_block")]
+position = Vector2(670, -4390)
+size = Vector2(200, 24)
+
+[node name="Climb48" parent="Environment" unique_id=900000048 instance=ExtResource("3_block")]
+position = Vector2(490, -4480)
+size = Vector2(200, 24)
+
+[node name="Climb49" parent="Environment" unique_id=900000049 instance=ExtResource("3_block")]
+position = Vector2(670, -4570)
+size = Vector2(200, 24)
+
+[node name="Climb50" parent="Environment" unique_id=900000050 instance=ExtResource("3_block")]
+position = Vector2(490, -4660)
+size = Vector2(200, 24)
+
+[node name="Climb51" parent="Environment" unique_id=900000051 instance=ExtResource("3_block")]
+position = Vector2(670, -4750)
+size = Vector2(200, 24)
+
+[node name="Climb52" parent="Environment" unique_id=900000052 instance=ExtResource("3_block")]
+position = Vector2(490, -4840)
+size = Vector2(200, 24)
+
+[node name="TopPlatform" parent="Environment" unique_id=1267245898 instance=ExtResource("3_block")]
+position = Vector2(692, -4883)
+size = Vector2(260, 24)
+
+[node name="Goal" type="Area2D" parent="Environment" unique_id=376175784]
+position = Vector2(536, -4926)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Goal" unique_id=450635563]
+shape = SubResource("RectangleShape2D_goal")
+
+[node name="Pole" type="Polygon2D" parent="Environment/Goal" unique_id=1683880519]
+color = Color(0.25, 0.25, 0.28, 1)
+polygon = PackedVector2Array(-3, -30, 3, -30, 3, 30, -3, 30)
+
+[node name="Flag" type="Polygon2D" parent="Environment/Goal" unique_id=291942605]
+color = Color(0.78, 0.78, 0.82, 1)
+polygon = PackedVector2Array(3, -30, 34, -20, 3, -10)

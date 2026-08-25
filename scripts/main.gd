@@ -214,5 +214,5 @@ func _capture_screenshot() -> void:
 	cam.make_current()
 	await get_tree().create_timer(0.6).timeout
 	var img := get_viewport().get_texture().get_image()
-	img.save_png("D:/10인준완/Godot/emotion/emotion/_preview.png")
+	img.save_png("res://_preview.png")
 	get_tree().quit()

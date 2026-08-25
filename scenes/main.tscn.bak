@@ -11,7 +11,7 @@ size = Vector2(70, 60)
 script = ExtResource("1_main")
 
 [node name="Player" parent="." unique_id=1151651846 instance=ExtResource("2_player")]
-position = Vector2(124, -2400)
+position = Vector2(220, -430)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1647681346]
 
@@ -45,7 +45,7 @@ kind = 2
 size = Vector2(60, 60)
 
 [node name="KnockbackWall2" parent="Environment" unique_id=225997349 instance=ExtResource("3_block")]
-position = Vector2(813, -373)
+position = Vector2(813, -385)
 kind = 2
 size = Vector2(60, 60)
 
@@ -96,7 +96,7 @@ position = Vector2(230, -340)
 size = Vector2(50, 50)
 
 [node name="Climb5" parent="Environment" unique_id=900000005 instance=ExtResource("3_block")]
-position = Vector2(637, -540)
+position = Vector2(633, -540)
 size = Vector2(200, 24)
 
 [node name="Climb6" parent="Environment" unique_id=900000006 instance=ExtResource("3_block")]
@@ -108,7 +108,7 @@ position = Vector2(834, -540)
 size = Vector2(200, 24)
 
 [node name="Climb8" parent="Environment" unique_id=900000008 instance=ExtResource("3_block")]
-position = Vector2(516, -646)
+position = Vector2(516, -651)
 rotation = 1.5707964
 size = Vector2(200, 24)
 
@@ -144,7 +144,7 @@ position = Vector2(733, -1024)
 size = Vector2(200, 24)
 
 [node name="Climb16" parent="Environment" unique_id=900000016 instance=ExtResource("3_block")]
-position = Vector2(662, -1196)
+position = Vector2(733, -1219)
 size = Vector2(200, 24)
 
 [node name="Climb17" parent="Environment" unique_id=900000017 instance=ExtResource("3_block")]
@@ -161,11 +161,6 @@ position = Vector2(503.00006, -1500)
 scale = Vector2(0.27999997, 1)
 size = Vector2(200, 24)
 
-[node name="Climb29" parent="Environment" unique_id=612900299 instance=ExtResource("3_block")]
-position = Vector2(869, -1262)
-scale = Vector2(0.31839997, 1)
-size = Vector2(200, 24)
-
 [node name="Climb20" parent="Environment" unique_id=900000020 instance=ExtResource("3_block")]
 position = Vector2(733, -1599)
 size = Vector2(200, 24)
@@ -175,12 +170,13 @@ position = Vector2(508, -1705)
 size = Vector2(200, 24)
 
 [node name="Climb22" parent="Environment" unique_id=900000022 instance=ExtResource("3_block")]
-position = Vector2(619, -1793)
+position = Vector2(620, -1791)
 rotation = 1.5707964
 size = Vector2(200, 24)
 
 [node name="Climb23" parent="Environment" unique_id=900000023 instance=ExtResource("3_block")]
 position = Vector2(972.99994, -1672.9999)
+rotation = 0.5235988
 size = Vector2(200, 24)
 
 [node name="Climb24" parent="Environment" unique_id=900000024 instance=ExtResource("3_block")]
@@ -194,7 +190,7 @@ kind = 2
 size = Vector2(60, 60)
 
 [node name="KnockbackWall4" parent="Environment" unique_id=329159640 instance=ExtResource("3_block")]
-position = Vector2(382, -951)
+position = Vector2(372, -951)
 kind = 2
 size = Vector2(60, 60)
 
@@ -218,7 +214,7 @@ scale = Vector2(0.6399976, 1)
 size = Vector2(200, 24)
 
 [node name="Climb27" parent="Environment" unique_id=900000027 instance=ExtResource("3_block")]
-position = Vector2(180, -1917)
+position = Vector2(182, -1917)
 size = Vector2(200, 24)
 
 [node name="SlopeRight2" parent="Environment" unique_id=95793814 instance=ExtResource("3_block")]
@@ -228,7 +224,100 @@ size = Vector2(200, 24)
 spin_speed = 1.5
 
 [node name="Climb28" parent="Environment" unique_id=900000028 instance=ExtResource("3_block")]
-position = Vector2(180, -2346)
+position = Vector2(182, -2346)
+size = Vector2(200, 24)
+
+[node name="Climb29" parent="Environment" unique_id=900000029 instance=ExtResource("3_block")]
+position = Vector2(520, -2346)
+size = Vector2(200, 24)
+
+[node name="Climb30" parent="Environment" unique_id=900000030 instance=ExtResource("3_block")]
+position = Vector2(721, -2346)
+size = Vector2(200, 24)
+
+[node name="Climb31" parent="Environment" unique_id=900000031 instance=ExtResource("3_block")]
+position = Vector2(834, -2433)
+rotation = 1.5707964
+size = Vector2(200, 24)
+
+[node name="Climb32" parent="Environment" unique_id=900000032 instance=ExtResource("3_block")]
+position = Vector2(490, -3040)
+size = Vector2(200, 24)
+
+[node name="Climb33" parent="Environment" unique_id=900000033 instance=ExtResource("3_block")]
+position = Vector2(670, -3130)
+size = Vector2(200, 24)
+
+[node name="Climb34" parent="Environment" unique_id=900000034 instance=ExtResource("3_block")]
+position = Vector2(490, -3220)
+size = Vector2(200, 24)
+
+[node name="Climb35" parent="Environment" unique_id=900000035 instance=ExtResource("3_block")]
+position = Vector2(670, -3310)
+size = Vector2(200, 24)
+
+[node name="Climb36" parent="Environment" unique_id=900000036 instance=ExtResource("3_block")]
+position = Vector2(490, -3400)
+size = Vector2(200, 24)
+
+[node name="Climb37" parent="Environment" unique_id=900000037 instance=ExtResource("3_block")]
+position = Vector2(670, -3490)
+size = Vector2(200, 24)
+
+[node name="Climb38" parent="Environment" unique_id=900000038 instance=ExtResource("3_block")]
+position = Vector2(490, -3580)
+size = Vector2(200, 24)
+
+[node name="Climb39" parent="Environment" unique_id=900000039 instance=ExtResource("3_block")]
+position = Vector2(670, -3670)
+size = Vector2(200, 24)
+
+[node name="Climb40" parent="Environment" unique_id=900000040 instance=ExtResource("3_block")]
+position = Vector2(490, -3760)
+size = Vector2(200, 24)
+
+[node name="Climb41" parent="Environment" unique_id=900000041 instance=ExtResource("3_block")]
+position = Vector2(670, -3850)
+size = Vector2(200, 24)
+
+[node name="Climb42" parent="Environment" unique_id=900000042 instance=ExtResource("3_block")]
+position = Vector2(490, -3940)
+size = Vector2(200, 24)
+
+[node name="Climb43" parent="Environment" unique_id=900000043 instance=ExtResource("3_block")]
+position = Vector2(670, -4030)
+size = Vector2(200, 24)
+
+[node name="Climb44" parent="Environment" unique_id=900000044 instance=ExtResource("3_block")]
+position = Vector2(490, -4120)
+size = Vector2(200, 24)
+
+[node name="Climb45" parent="Environment" unique_id=900000045 instance=ExtResource("3_block")]
+position = Vector2(670, -4210)
+size = Vector2(200, 24)
+
+[node name="Climb46" parent="Environment" unique_id=900000046 instance=ExtResource("3_block")]
+position = Vector2(490, -4300)
+size = Vector2(200, 24)
+
+[node name="Climb47" parent="Environment" unique_id=900000047 instance=ExtResource("3_block")]
+position = Vector2(670, -4390)
+size = Vector2(200, 24)
+
+[node name="Climb48" parent="Environment" unique_id=900000048 instance=ExtResource("3_block")]
+position = Vector2(490, -4480)
+size = Vector2(200, 24)
+
+[node name="Climb49" parent="Environment" unique_id=900000049 instance=ExtResource("3_block")]
+position = Vector2(670, -4570)
+size = Vector2(200, 24)
+
+[node name="Climb50" parent="Environment" unique_id=900000050 instance=ExtResource("3_block")]
+position = Vector2(490, -4660)
+size = Vector2(200, 24)
+
+[node name="Climb51" parent="Environment" unique_id=900000051 instance=ExtResource("3_block")]
+position = Vector2(670, -4750)
 size = Vector2(200, 24)
 
 [node name="SlopeRight" parent="Environment" unique_id=900000052 instance=ExtResource("3_block")]
@@ -236,153 +325,6 @@ position = Vector2(205.00002, -823)
 rotation = 0.6
 size = Vector2(200, 24)
 spin_speed = 1.5
-
-[node name="Path0" parent="Environment" unique_id=910000000 instance=ExtResource("3_block")]
-position = Vector2(503, -2346)
-size = Vector2(200, 24)
-
-[node name="Path1" parent="Environment" unique_id=910000001 instance=ExtResource("3_block")]
-position = Vector2(681, -2346)
-size = Vector2(160, 24)
-
-[node name="Path2" parent="Environment" unique_id=910000002 instance=ExtResource("3_block")]
-position = Vector2(359.8, -2610)
-size = Vector2(220, 24)
-
-[node name="Path3" parent="Environment" unique_id=910000003 instance=ExtResource("3_block")]
-position = Vector2(538.7, -2698)
-size = Vector2(180, 24)
-
-[node name="Path4" parent="Environment" unique_id=910000004 instance=ExtResource("3_block")]
-position = Vector2(357.6, -2786)
-size = Vector2(140, 24)
-
-[node name="Path5" parent="Environment" unique_id=910000005 instance=ExtResource("3_block")]
-position = Vector2(536.4, -2874)
-size = Vector2(200, 24)
-
-[node name="Path6" parent="Environment" unique_id=910000006 instance=ExtResource("3_block")]
-position = Vector2(355.3, -2962)
-size = Vector2(220, 24)
-
-[node name="Path7" parent="Environment" unique_id=910000007 instance=ExtResource("3_block")]
-position = Vector2(534.2, -3050)
-size = Vector2(160, 24)
-
-[node name="Path8" parent="Environment" unique_id=910000008 instance=ExtResource("3_block")]
-position = Vector2(353.1, -3138)
-size = Vector2(200, 24)
-
-[node name="Path9" parent="Environment" unique_id=910000009 instance=ExtResource("3_block")]
-position = Vector2(532, -3226)
-size = Vector2(160, 24)
-
-[node name="Path10" parent="Environment" unique_id=910000010 instance=ExtResource("3_block")]
-position = Vector2(350.9, -3314)
-size = Vector2(220, 24)
-
-[node name="Path11" parent="Environment" unique_id=910000011 instance=ExtResource("3_block")]
-position = Vector2(529.8, -3402)
-size = Vector2(180, 24)
-
-[node name="Path12" parent="Environment" unique_id=910000012 instance=ExtResource("3_block")]
-position = Vector2(348.7, -3490)
-size = Vector2(140, 24)
-
-[node name="Path13" parent="Environment" unique_id=910000013 instance=ExtResource("3_block")]
-position = Vector2(527.6, -3578)
-size = Vector2(200, 24)
-
-[node name="Path14" parent="Environment" unique_id=910000014 instance=ExtResource("3_block")]
-position = Vector2(346.4, -3666)
-size = Vector2(220, 24)
-
-[node name="Path15" parent="Environment" unique_id=910000015 instance=ExtResource("3_block")]
-position = Vector2(525.3, -3754)
-size = Vector2(160, 24)
-
-[node name="Path16" parent="Environment" unique_id=910000016 instance=ExtResource("3_block")]
-position = Vector2(344.2, -3842)
-size = Vector2(200, 24)
-
-[node name="Path17" parent="Environment" unique_id=910000017 instance=ExtResource("3_block")]
-position = Vector2(523.1, -3930)
-size = Vector2(160, 24)
-
-[node name="Path18" parent="Environment" unique_id=910000018 instance=ExtResource("3_block")]
-position = Vector2(342, -4018)
-size = Vector2(220, 24)
-
-[node name="Path19" parent="Environment" unique_id=910000019 instance=ExtResource("3_block")]
-position = Vector2(520.9, -4106)
-size = Vector2(180, 24)
-
-[node name="Path20" parent="Environment" unique_id=910000020 instance=ExtResource("3_block")]
-position = Vector2(339.8, -4194)
-size = Vector2(140, 24)
-
-[node name="Path21" parent="Environment" unique_id=910000021 instance=ExtResource("3_block")]
-position = Vector2(518.7, -4282)
-size = Vector2(200, 24)
-
-[node name="Path22" parent="Environment" unique_id=910000022 instance=ExtResource("3_block")]
-position = Vector2(337.6, -4370)
-size = Vector2(220, 24)
-
-[node name="Path23" parent="Environment" unique_id=910000023 instance=ExtResource("3_block")]
-position = Vector2(516.4, -4458)
-size = Vector2(160, 24)
-
-[node name="Path24" parent="Environment" unique_id=910000024 instance=ExtResource("3_block")]
-position = Vector2(335.3, -4546)
-size = Vector2(200, 24)
-
-[node name="Path25" parent="Environment" unique_id=910000025 instance=ExtResource("3_block")]
-position = Vector2(514.2, -4634)
-size = Vector2(160, 24)
-
-[node name="Path26" parent="Environment" unique_id=910000026 instance=ExtResource("3_block")]
-position = Vector2(333.1, -4722)
-size = Vector2(220, 24)
-
-[node name="Path27" parent="Environment" unique_id=910000027 instance=ExtResource("3_block")]
-position = Vector2(512, -4810)
-size = Vector2(180, 24)
-
-[node name="PathSpike0" parent="Environment" unique_id=920000000 instance=ExtResource("3_block")]
-position = Vector2(218, -2610)
-kind = 2
-size = Vector2(55, 55)
-
-[node name="PathSpike1" parent="Environment" unique_id=920000001 instance=ExtResource("3_block")]
-position = Vector2(655, -2980)
-kind = 2
-size = Vector2(55, 55)
-
-[node name="PathSpike2" parent="Environment" unique_id=920000002 instance=ExtResource("3_block")]
-position = Vector2(235, -3420)
-kind = 2
-size = Vector2(55, 55)
-
-[node name="PathSpike3" parent="Environment" unique_id=920000003 instance=ExtResource("3_block")]
-position = Vector2(655, -3820)
-kind = 2
-size = Vector2(55, 55)
-
-[node name="PathSpike4" parent="Environment" unique_id=920000004 instance=ExtResource("3_block")]
-position = Vector2(235, -4260)
-kind = 2
-size = Vector2(55, 55)
-
-[node name="PathSpin0" parent="Environment" unique_id=930000000 instance=ExtResource("3_block")]
-position = Vector2(450, -3200)
-size = Vector2(180, 20)
-spin_speed = 1.8
-
-[node name="PathSpin1" parent="Environment" unique_id=930000001 instance=ExtResource("3_block")]
-position = Vector2(450, -4050)
-size = Vector2(180, 20)
-spin_speed = -1.8
 
 [node name="TopPlatform" parent="Environment" unique_id=1267245898 instance=ExtResource("3_block")]
 position = Vector2(692, -4883)
@@ -403,7 +345,7 @@ color = Color(0.78, 0.78, 0.82, 1)
 polygon = PackedVector2Array(3, -30, 34, -20, 3, -10)
 
 [node name="CrackedWall" parent="." unique_id=1881501746 instance=ExtResource("3_block")]
-position = Vector2(993, -837)
+position = Vector2(989, -826)
 kind = 1
 size = Vector2(160, 22)
 
@@ -418,18 +360,12 @@ kind = 1
 size = Vector2(160, 22)
 
 [node name="CrackedWall4" parent="." unique_id=94148210 instance=ExtResource("3_block")]
-position = Vector2(457, -540)
+position = Vector2(452, -541)
 kind = 1
 size = Vector2(160, 22)
 
 [node name="CrackedWall7" parent="." unique_id=1072372263 instance=ExtResource("3_block")]
-position = Vector2(359, -1917)
-kind = 1
-size = Vector2(160, 22)
-
-[node name="CrackedWall8" parent="." unique_id=1718611952 instance=ExtResource("3_block")]
-position = Vector2(450, -1986)
-rotation = 1.5707964
+position = Vector2(220, -1967)
 kind = 1
 size = Vector2(160, 22)
 

@@ -21,6 +21,13 @@ const COLORS := {
 		size = v
 		_apply()
 
+@export var spin_speed := 0.0  # 라디안/초 (0=정지). 계속 회전하는 벽에 사용.
+
+
+func _process(delta: float) -> void:
+	if spin_speed != 0.0 and not Engine.is_editor_hint():
+		rotation += spin_speed * delta
+
 
 func _ready() -> void:
 	_apply()

@@ -11,7 +11,7 @@ const GRAVITY := 1200.0
 # 감정별 스탯 표 (ability = HUD에 보여줄 능력 설명)
 const STATS := {
 	Emotion.NEUTRAL: {"speed": 220.0, "jump": 520.0, "name": "기본", "color": Color(0.82, 0.82, 0.88), "ability": "기본 이동 · 기본 점프"},
-	Emotion.ANGER:   {"speed": 220.0, "jump": 380.0, "name": "분노", "color": Color(0.90, 0.25, 0.20), "ability": "금 간 벽 파괴 · 낮은 점프"},
+	Emotion.ANGER:   {"speed": 220.0, "jump": 430.0, "name": "분노", "color": Color(0.90, 0.25, 0.20), "ability": "금 간 벽 파괴 · 낮은 점프"},
 	Emotion.FEAR:    {"speed": 340.0, "jump": 520.0, "name": "공포", "color": Color(0.55, 0.30, 0.78), "ability": "빠른 이동 · 미끄러짐"},
 	Emotion.JOY:     {"speed": 130.0, "jump": 730.0, "name": "기쁨", "color": Color(1.00, 0.84, 0.22), "ability": "높은 점프 · 느린 이동"},
 	Emotion.SADNESS: {"speed": 130.0, "jump": 520.0, "name": "슬픔", "color": Color(0.25, 0.55, 0.92), "ability": "벽 붙기 · 느린 이동"},
@@ -120,8 +120,6 @@ func _physics_process(delta: float) -> void:
 		_track_landing(false)
 		return
 
-	_handle_emotion_switch()
-
 	var st: Dictionary = STATS[emotion]
 	var dir := Input.get_axis("move_left", "move_right")
 
@@ -168,23 +166,6 @@ func _track_landing(allow_stun: bool) -> void:
 	else:
 		_air_min_y = minf(_air_min_y, global_position.y)  # 더 높이 오르면 갱신
 	_was_on_floor = is_on_floor()
-
-
-func _handle_emotion_switch() -> void:
-	var e := -1
-	if Input.is_action_just_pressed("emo_neutral"):
-		e = Emotion.NEUTRAL
-	elif Input.is_action_just_pressed("emo_anger"):
-		e = Emotion.ANGER
-	elif Input.is_action_just_pressed("emo_fear"):
-		e = Emotion.FEAR
-	elif Input.is_action_just_pressed("emo_joy"):
-		e = Emotion.JOY
-	elif Input.is_action_just_pressed("emo_sadness"):
-		e = Emotion.SADNESS
-	if e >= 0 and e != emotion:
-		set_emotion(e)
-		Sfx.play("switch")
 
 
 func _open_wheel() -> void:

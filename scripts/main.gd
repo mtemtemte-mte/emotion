@@ -16,6 +16,7 @@ const LEVEL_TOP_Y := -4915.0    # 맨 위(연함)
 var emotion_label: Label
 var win_label: Label
 var wheel: Control
+var ui_layer: CanvasLayer     # U 키로 껐다 켜는 UI 레이어
 var bg_mat: ShaderMaterial      # 배경 그라데이션 + 감정 틴트
 var wall_mat: ShaderMaterial    # 일반 벽 radial 색 전환 (공유)
 var wall_current := Color(0.5, 0.5, 0.5)
@@ -48,6 +49,13 @@ func _process(_delta: float) -> void:
 	# 캐릭터를 광원으로: 벽 셰이더에 매 프레임 플레이어 위치 전달
 	if wall_mat:
 		wall_mat.set_shader_parameter("light_pos", $Player.global_position)
+
+
+func _unhandled_input(event: InputEvent) -> void:
+	# U 키: UI 껐다 켜기 토글
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_U:
+		if ui_layer:
+			ui_layer.visible = not ui_layer.visible
 
 
 ## 화면 전체 글로우(빛번짐/블룸). 밝은(HDR) 색만 은은하게 빛남.
@@ -117,10 +125,11 @@ func _build_ui() -> void:
 	var layer := CanvasLayer.new()
 	layer.layer = 2  # 채도 오버레이(1) 위 -> UI는 항상 컬러
 	add_child(layer)
+	ui_layer = layer
 
 	var help := Label.new()
 	help.position = Vector2(16, 12)
-	help.text = "이동: A/D 또는 ←/→   점프: Space\n감정 휠: G 누른 채 방향 조합 → 방향키 떼면 적용 (↖기쁨 ↗슬픔 ↙분노 ↘공포)\n빠른전환: 1기본 2분노 3공포 4기쁨 5슬픔"
+	help.text = "이동: A/D 또는 ←/→   점프: Space\n감정 휠: G 누른 채 방향 조합 → 방향키 떼면 적용 (↖기쁨 ↗슬픔 ↙분노 ↘공포)\nU: UI 숨기기 / 보이기"
 	help.add_theme_color_override("font_color", Color.WHITE)
 	help.add_theme_color_override("font_outline_color", Color.BLACK)
 	help.add_theme_constant_override("outline_size", 4)

@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://dx6bgucosb0mb" path="res://scripts/main.gd" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scenes/block.tscn" id="3_block"]
+[ext_resource type="PackedScene" uid="uid://bn8p2emonpc01" path="res://scenes/npc.tscn" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://b6jlik7en6qc1" path="res://scenes/cannon.tscn" id="5_tbgi4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_goal"]
 size = Vector2(70, 60)
@@ -11,7 +13,7 @@ size = Vector2(70, 60)
 script = ExtResource("1_main")
 
 [node name="Player" parent="." unique_id=1151651846 instance=ExtResource("2_player")]
-position = Vector2(124, -2400)
+position = Vector2(587, 531)
 
 [node name="Environment" type="Node2D" parent="." unique_id=1647681346]
 
@@ -130,26 +132,30 @@ scale = Vector2(0.6400012, 1)
 size = Vector2(200, 24)
 
 [node name="Climb13" parent="Environment" unique_id=900000013 instance=ExtResource("3_block")]
-position = Vector2(561, -939)
-scale = Vector2(0.16000003, 1)
+position = Vector2(153.99998, -1336)
+scale = Vector2(0.7487999, 1)
 size = Vector2(200, 24)
 
+[node name="Climb29" parent="Environment" unique_id=1822920329 instance=ExtResource("3_block")]
+position = Vector2(1018, -1516)
+scale = Vector2(0.5607013, 1)
+size = Vector2(200, 24)
+
+[node name="Climb17" parent="Environment" unique_id=404409950 instance=ExtResource("3_block")]
+position = Vector2(351, -1554.0001)
+scale = Vector2(0.5607013, 1.6800001)
+
 [node name="Climb14" parent="Environment" unique_id=900000014 instance=ExtResource("3_block")]
-position = Vector2(438, -1081)
+position = Vector2(431, -1064)
 scale = Vector2(0.16000003, 1)
 size = Vector2(200, 24)
 
 [node name="Climb15" parent="Environment" unique_id=900000015 instance=ExtResource("3_block")]
-position = Vector2(733, -1024)
+position = Vector2(662, -1052)
 size = Vector2(200, 24)
 
 [node name="Climb16" parent="Environment" unique_id=900000016 instance=ExtResource("3_block")]
-position = Vector2(662, -1196)
-size = Vector2(200, 24)
-
-[node name="Climb17" parent="Environment" unique_id=900000017 instance=ExtResource("3_block")]
-position = Vector2(1031, -1362)
-scale = Vector2(0.39999998, 1)
+position = Vector2(662, -1220)
 size = Vector2(200, 24)
 
 [node name="Climb18" parent="Environment" unique_id=900000018 instance=ExtResource("3_block")]
@@ -157,13 +163,8 @@ position = Vector2(733, -1412)
 size = Vector2(200, 24)
 
 [node name="Climb19" parent="Environment" unique_id=900000019 instance=ExtResource("3_block")]
-position = Vector2(503.00006, -1500)
-scale = Vector2(0.27999997, 1)
-size = Vector2(200, 24)
-
-[node name="Climb29" parent="Environment" unique_id=612900299 instance=ExtResource("3_block")]
-position = Vector2(869, -1262)
-scale = Vector2(0.31839997, 1)
+position = Vector2(522, -939)
+scale = Vector2(0.16799998, 1)
 size = Vector2(200, 24)
 
 [node name="Climb20" parent="Environment" unique_id=900000020 instance=ExtResource("3_block")]
@@ -180,16 +181,16 @@ rotation = 1.5707964
 size = Vector2(200, 24)
 
 [node name="Climb23" parent="Environment" unique_id=900000023 instance=ExtResource("3_block")]
-position = Vector2(972.99994, -1672.9999)
+position = Vector2(973, -2495)
 size = Vector2(200, 24)
 
 [node name="Climb24" parent="Environment" unique_id=900000024 instance=ExtResource("3_block")]
-position = Vector2(740, -1877)
-scale = Vector2(0.56, 1)
+position = Vector2(814, -1784)
+scale = Vector2(0.15679999, 1)
 size = Vector2(200, 24)
 
 [node name="KnockbackWall3" parent="Environment" unique_id=397402665 instance=ExtResource("3_block")]
-position = Vector2(733, -1134)
+position = Vector2(813, -1114)
 kind = 2
 size = Vector2(60, 60)
 
@@ -203,13 +204,18 @@ position = Vector2(424, -1503)
 kind = 2
 size = Vector2(60, 60)
 
+[node name="KnockbackWall7" parent="Environment" unique_id=1585445576 instance=ExtResource("3_block")]
+position = Vector2(734, -2107)
+kind = 2
+size = Vector2(60, 60)
+
 [node name="KnockbackWall6" parent="Environment" unique_id=105001041 instance=ExtResource("3_block")]
-position = Vector2(1031, -1306)
+position = Vector2(1058, -1306)
 kind = 2
 size = Vector2(60, 60)
 
 [node name="Climb25" parent="Environment" unique_id=900000025 instance=ExtResource("3_block")]
-position = Vector2(330, -2020)
+position = Vector2(340, -2020)
 size = Vector2(200, 24)
 
 [node name="Climb26" parent="Environment" unique_id=900000026 instance=ExtResource("3_block")]
@@ -237,159 +243,217 @@ rotation = 0.6
 size = Vector2(200, 24)
 spin_speed = 1.5
 
+[node name="SlopeRight3" parent="Environment" unique_id=551593333 instance=ExtResource("3_block")]
+position = Vector2(419.00003, -1297)
+rotation = 1.2
+scale = Vector2(0.11563474, 0.98550296)
+size = Vector2(200, 24)
+spin_speed = 1.5
+
+[node name="Cannon2" parent="Environment" unique_id=638421333 instance=ExtResource("5_tbgi4")]
+position = Vector2(1071, -2782)
+rotation = 3.1415927
+scale = Vector2(1, 1.56)
+despawn_y = null
+
+[node name="cannon" parent="Environment" unique_id=1608565753 instance=ExtResource("5_tbgi4")]
+position = Vector2(79, -2656)
+scale = Vector2(1, 1.56)
+despawn_y = null
+
+[node name="Cannon3" parent="Environment" unique_id=1265886119 instance=ExtResource("5_tbgi4")]
+position = Vector2(769, -3088)
+rotation = -3.1415925
+scale = Vector2(1, 1.56)
+fire_interval = 5.0
+despawn_y = -2722.0
+
+[node name="Cannon" parent="Environment" unique_id=1700191488 instance=ExtResource("5_tbgi4")]
+position = Vector2(359.00003, -3364)
+scale = Vector2(0.6400024, 1.56)
+fire_interval = 6.0
+despawn_y = -3310.0
+
+[node name="Cannon4" parent="Environment" unique_id=2014926039 instance=ExtResource("5_tbgi4")]
+position = Vector2(223, -3364)
+scale = Vector2(0.68, 1.56)
+fire_interval = 5.0
+despawn_y = -3114.0
+
+[node name="Cannon5" parent="Environment" unique_id=1325511912 instance=ExtResource("5_tbgi4")]
+position = Vector2(79.99999, -3365)
+scale = Vector2(0.6800006, 1.56)
+fire_interval = 4.0
+despawn_y = -3114.0
+
 [node name="Path0" parent="Environment" unique_id=910000000 instance=ExtResource("3_block")]
-position = Vector2(503, -2346)
+position = Vector2(445, -2668)
+scale = Vector2(0.72, 1)
 size = Vector2(200, 24)
 
 [node name="Path1" parent="Environment" unique_id=910000001 instance=ExtResource("3_block")]
-position = Vector2(681, -2346)
+position = Vector2(733, -2346)
+scale = Vector2(4.3200026, 1)
 size = Vector2(160, 24)
 
 [node name="Path2" parent="Environment" unique_id=910000002 instance=ExtResource("3_block")]
-position = Vector2(359.8, -2610)
+position = Vector2(670, -2587)
+scale = Vector2(0.68, 1)
 size = Vector2(220, 24)
 
 [node name="Path3" parent="Environment" unique_id=910000003 instance=ExtResource("3_block")]
-position = Vector2(538.7, -2698)
+position = Vector2(137, -2610)
+scale = Vector2(0.7599994, 1)
 size = Vector2(180, 24)
 
 [node name="Path4" parent="Environment" unique_id=910000004 instance=ExtResource("3_block")]
-position = Vector2(357.6, -2786)
+position = Vector2(1018, -2734)
 size = Vector2(140, 24)
 
 [node name="Path5" parent="Environment" unique_id=910000005 instance=ExtResource("3_block")]
-position = Vector2(536.4, -2874)
+position = Vector2(733, -2769)
+scale = Vector2(0.68, 1)
 size = Vector2(200, 24)
 
 [node name="Path6" parent="Environment" unique_id=910000006 instance=ExtResource("3_block")]
-position = Vector2(355.3, -2962)
+position = Vector2(255, -2818)
+scale = Vector2(0.704, 1)
 size = Vector2(220, 24)
 
 [node name="Path7" parent="Environment" unique_id=910000007 instance=ExtResource("3_block")]
-position = Vector2(534.2, -3050)
+position = Vector2(506.00003, -2927)
+scale = Vector2(0.84000003, 1)
 size = Vector2(160, 24)
 
 [node name="Path8" parent="Environment" unique_id=910000008 instance=ExtResource("3_block")]
-position = Vector2(353.1, -3138)
+position = Vector2(862.99994, -2927)
+scale = Vector2(0.67260754, 1)
 size = Vector2(200, 24)
 
 [node name="Path9" parent="Environment" unique_id=910000009 instance=ExtResource("3_block")]
-position = Vector2(532, -3226)
+position = Vector2(689, -3041)
 size = Vector2(160, 24)
 
 [node name="Path10" parent="Environment" unique_id=910000010 instance=ExtResource("3_block")]
-position = Vector2(350.9, -3314)
+position = Vector2(777, -3077)
+rotation = 1.5707964
+scale = Vector2(0.44, 1)
 size = Vector2(220, 24)
 
 [node name="Path11" parent="Environment" unique_id=910000011 instance=ExtResource("3_block")]
-position = Vector2(529.8, -3402)
+position = Vector2(1018, -3108)
+scale = Vector2(0.8799951, 1)
 size = Vector2(180, 24)
 
 [node name="Path12" parent="Environment" unique_id=910000012 instance=ExtResource("3_block")]
-position = Vector2(348.7, -3490)
+position = Vector2(777.00006, -3349)
+rotation = 1.5707964
+scale = Vector2(3.2399902, 1)
 size = Vector2(140, 24)
 
 [node name="Path13" parent="Environment" unique_id=910000013 instance=ExtResource("3_block")]
-position = Vector2(527.6, -3578)
+position = Vector2(178, -3096)
 size = Vector2(200, 24)
 
 [node name="Path14" parent="Environment" unique_id=910000014 instance=ExtResource("3_block")]
-position = Vector2(346.4, -3666)
+position = Vector2(934.00006, -3376)
+scale = Vector2(0.12480048, 1)
 size = Vector2(220, 24)
 
 [node name="Path15" parent="Environment" unique_id=910000015 instance=ExtResource("3_block")]
-position = Vector2(525.3, -3754)
+position = Vector2(933.99994, -3489)
+scale = Vector2(0.19663645, 1)
 size = Vector2(160, 24)
 
 [node name="Path16" parent="Environment" unique_id=910000016 instance=ExtResource("3_block")]
-position = Vector2(344.2, -3842)
+position = Vector2(535, -3174)
+scale = Vector2(1.0655653, 1)
 size = Vector2(200, 24)
 
 [node name="Path17" parent="Environment" unique_id=910000017 instance=ExtResource("3_block")]
-position = Vector2(523.1, -3930)
+position = Vector2(523, -3564)
+scale = Vector2(3.319995, 1)
 size = Vector2(160, 24)
 
 [node name="Path18" parent="Environment" unique_id=910000018 instance=ExtResource("3_block")]
-position = Vector2(342, -4018)
+position = Vector2(655, -3281)
 size = Vector2(220, 24)
 
 [node name="Path19" parent="Environment" unique_id=910000019 instance=ExtResource("3_block")]
-position = Vector2(520.9, -4106)
+position = Vector2(351, -3364)
+rotation = 1.5707964
+scale = Vector2(0.4, 1)
 size = Vector2(180, 24)
 
 [node name="Path20" parent="Environment" unique_id=910000020 instance=ExtResource("3_block")]
-position = Vector2(339.8, -4194)
+position = Vector2(218, -3363.9998)
+rotation = 1.5707964
+scale = Vector2(0.52096766, 1)
 size = Vector2(140, 24)
 
 [node name="Path21" parent="Environment" unique_id=910000021 instance=ExtResource("3_block")]
-position = Vector2(518.7, -4282)
+position = Vector2(576, -3576)
+scale = Vector2(-0.03998533, 1)
 size = Vector2(200, 24)
 
 [node name="Path22" parent="Environment" unique_id=910000022 instance=ExtResource("3_block")]
-position = Vector2(337.6, -4370)
+position = Vector2(188, -3724)
 size = Vector2(220, 24)
 
 [node name="Path23" parent="Environment" unique_id=910000023 instance=ExtResource("3_block")]
-position = Vector2(516.4, -4458)
+position = Vector2(397, -3889)
 size = Vector2(160, 24)
 
 [node name="Path24" parent="Environment" unique_id=910000024 instance=ExtResource("3_block")]
-position = Vector2(335.3, -4546)
+position = Vector2(655, -3951)
+scale = Vector2(0.73919994, 1)
 size = Vector2(200, 24)
 
 [node name="Path25" parent="Environment" unique_id=910000025 instance=ExtResource("3_block")]
-position = Vector2(514.2, -4634)
+position = Vector2(993, -4060)
 size = Vector2(160, 24)
 
 [node name="Path26" parent="Environment" unique_id=910000026 instance=ExtResource("3_block")]
-position = Vector2(333.1, -4722)
+position = Vector2(689, -4207)
+size = Vector2(220, 24)
+
+[node name="Path28" parent="Environment" unique_id=965735062 instance=ExtResource("3_block")]
+position = Vector2(962, -2127)
 size = Vector2(220, 24)
 
 [node name="Path27" parent="Environment" unique_id=910000027 instance=ExtResource("3_block")]
-position = Vector2(512, -4810)
+position = Vector2(431, -4373)
 size = Vector2(180, 24)
 
-[node name="PathSpike0" parent="Environment" unique_id=920000000 instance=ExtResource("3_block")]
-position = Vector2(218, -2610)
-kind = 2
-size = Vector2(55, 55)
+[node name="Path29" parent="Environment" unique_id=1547247064 instance=ExtResource("3_block")]
+position = Vector2(154, -4557)
+size = Vector2(180, 24)
 
-[node name="PathSpike1" parent="Environment" unique_id=920000001 instance=ExtResource("3_block")]
-position = Vector2(655, -2980)
-kind = 2
-size = Vector2(55, 55)
+[node name="Path30" parent="Environment" unique_id=777921585 instance=ExtResource("3_block")]
+position = Vector2(373, -4724)
+size = Vector2(180, 24)
 
 [node name="PathSpike2" parent="Environment" unique_id=920000002 instance=ExtResource("3_block")]
-position = Vector2(235, -3420)
+position = Vector2(813, -3214)
 kind = 2
 size = Vector2(55, 55)
 
 [node name="PathSpike3" parent="Environment" unique_id=920000003 instance=ExtResource("3_block")]
-position = Vector2(655, -3820)
+position = Vector2(948, -3429)
 kind = 2
 size = Vector2(55, 55)
 
 [node name="PathSpike4" parent="Environment" unique_id=920000004 instance=ExtResource("3_block")]
-position = Vector2(235, -4260)
+position = Vector2(948, -3544)
 kind = 2
 size = Vector2(55, 55)
 
-[node name="PathSpin0" parent="Environment" unique_id=930000000 instance=ExtResource("3_block")]
-position = Vector2(450, -3200)
-size = Vector2(180, 20)
-spin_speed = 1.8
-
-[node name="PathSpin1" parent="Environment" unique_id=930000001 instance=ExtResource("3_block")]
-position = Vector2(450, -4050)
-size = Vector2(180, 20)
-spin_speed = -1.8
-
 [node name="TopPlatform" parent="Environment" unique_id=1267245898 instance=ExtResource("3_block")]
-position = Vector2(692, -4883)
+position = Vector2(539, -4883)
 size = Vector2(260, 24)
 
 [node name="Goal" type="Area2D" parent="Environment" unique_id=376175784]
-position = Vector2(536, -4926)
+position = Vector2(539, -4925)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Environment/Goal" unique_id=450635563]
 shape = SubResource("RectangleShape2D_goal")
@@ -443,7 +507,19 @@ position = Vector2(670, -690)
 kind = 1
 size = Vector2(160, 22)
 
+[node name="CrackedWall9" parent="." unique_id=149164834 instance=ExtResource("3_block")]
+position = Vector2(992, -2232)
+rotation = 1.5707964
+scale = Vector2(1.2800099, 1)
+kind = 1
+size = Vector2(160, 22)
+
 [node name="KnockbackWall2" parent="." unique_id=802552989 instance=ExtResource("3_block")]
 position = Vector2(397, -783)
 kind = 2
 size = Vector2(60, 60)
+
+[node name="NPC" parent="." unique_id=148927073 instance=ExtResource("4_jyhfs")]
+z_index = 5
+position = Vector2(1045, -2165)
+dialogue = "분노로 해결 하지마"

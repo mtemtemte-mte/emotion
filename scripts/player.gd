@@ -222,6 +222,18 @@ func _resolve_collisions() -> void:
 			Sfx.play("knockback")
 
 
+## 대포알에 맞았을 때: 옆으로 튕기며 기절 (넉백 벽과 동일 효과).
+## 공은 물리 충돌을 무시하고 그대로 진행하고, 이 호출로 플레이어만 튕겨나감.
+func hit_knockback(from_position: Vector2) -> void:
+	if stun_timer > 0.0:
+		return
+	var dx := global_position.x - from_position.x
+	var away := signf(dx) if absf(dx) > 1.0 else (1.0 if randf() < 0.5 else -1.0)
+	velocity = Vector2(away * KNOCKBACK_FORCE, -KNOCKBACK_FORCE * 0.7)
+	stun_timer = STUN_TIME
+	Sfx.play("knockback")
+
+
 ## 벽이 조각나서 사방으로 튀며 사라지는 파편 이펙트
 func _shatter(pos: Vector2, sz: Vector2, color: Color) -> void:
 	var p := CPUParticles2D.new()

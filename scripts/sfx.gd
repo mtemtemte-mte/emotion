@@ -35,6 +35,11 @@ func _ready() -> void:
 		var freq := 660.0 if p < 0.5 else 990.0
 		return sin(TAU * freq * t) * (1.0 - p) * 0.4)
 
+	# 언더테일식 대사 블립 (짧은 사각파 삑)
+	_streams["talk"] = _synth(0.055, func(t, p):
+		var sq := 1.0 if sin(TAU * 480.0 * t) > 0.0 else -1.0
+		return sq * pow(1.0 - p, 2.0) * 0.22)
+
 
 func play(name: String) -> void:
 	if not _streams.has(name):

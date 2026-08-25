@@ -5,6 +5,7 @@ extends Node2D
 const WheelScript := preload("res://scripts/emotion_wheel.gd")
 const BgShader := preload("res://scripts/bg_height.gdshader")
 const WallShader := preload("res://scripts/wall.gdshader")
+const EndingSky := preload("res://scripts/ending_sky.gd")
 
 const WALL_BASE := Color(0.30, 0.33, 0.40)  # 일반 벽 회색
 const WALL_MIX := 0.5                          # 감정 색 섞는 정도
@@ -22,6 +23,7 @@ var wall_mat: ShaderMaterial    # 일반 벽 radial 색 전환 (공유)
 var wall_current := Color(0.5, 0.5, 0.5)
 var _wall_tween: Tween          # 원형 퍼짐 트윈 (겹침 방지)
 var _bg_tween: Tween            # 배경 색 트윈
+var _ended := false             # 도착 엔딩 1회만
 
 
 func _ready() -> void:
@@ -201,8 +203,95 @@ func _on_emotion_changed(display_name: String, color: Color, ability: String) ->
 
 
 func _on_goal_body(body: Node) -> void:
-	if body.is_in_group("player") and win_label:
-		win_label.visible = true
+	if _ended or not body.is_in_group("player"):
+		return
+	_ended = true
+	_start_ending()
+
+
+## 도착 엔딩: 조작 잠금 -> 카메라가 플레이어 위치에서 하늘로 상승 -> 걸린 시간 표시
+func _start_ending() -> void:
+	var player := get_node_or_null("Player") as Node2D
+	if player == null:
+		return
+	var elapsed_ms := Time.get_ticks_msec()  # 게임 실행부터 지금까지(ms)
+
+	# 플레이어 조작/물리 정지 + 게임 UI 숨김
+	player.set_physics_process(false)
+	if ui_layer:
+		ui_layer.visible = false
+
+	var vp := get_viewport_rect().size
+	var cam := player.get_node_or_null("Camera2D") as Camera2D
+	var px: float = cam.fixed_x if cam else 576.0
+	var py := player.global_position.y
+	var rise := vp.y * 1.4  # 올라갈 거리
+
+	# 플레이어 위쪽 하늘(월드) — 카메라가 올라가면 드러남. 코드로 그림.
+	var sky := Node2D.new()
+	sky.set_script(EndingSky)
+	sky.z_index = 200  # 그 구역의 벽 위를 덮어 하늘만 보이게
+	var sky_w := vp.x * 2.0
+	var sky_h := rise + vp.y * 2.0
+	var sky_bottom := py - vp.y * 0.5 - 40.0                      # 시작 화면 위쪽 바로 바깥
+	sky.position = Vector2(px - sky_w * 0.5, sky_bottom - sky_h)  # 좌상단
+	add_child(sky)
+	sky.setup(sky_w, sky_h)
+
+	# 카메라를 플레이어 위치에서 하늘로 부드럽게 상승
+	if cam:
+		cam.position_smoothing_enabled = false
+		var tw := create_tween()
+		tw.set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+		tw.tween_property(cam, "global_position:y", py - rise, 3.0)
+		tw.tween_callback(_show_ending_text.bind(elapsed_ms))
+	else:
+		_show_ending_text(elapsed_ms)
+
+
+## 상승 후 "당신이 허비한 시간 / N시간 N분 N초" 를 화면에 서서히 표시
+func _show_ending_text(elapsed_ms: int) -> void:
+	var vp := get_viewport_rect().size
+	var layer := CanvasLayer.new()
+	layer.layer = 100
+	add_child(layer)
+
+	var root := Control.new()
+	root.set_anchors_preset(Control.PRESET_FULL_RECT)
+	root.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	root.modulate.a = 0.0  # 서서히 나타남
+	layer.add_child(root)
+
+	var title := Label.new()
+	title.text = "당신이 허비한 시간"
+	title.size = Vector2(vp.x, 60.0)
+	title.position = Vector2(0.0, vp.y * 0.34)
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	title.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	title.add_theme_font_size_override("font_size", 34)
+	title.add_theme_color_override("font_color", Color(0.12, 0.18, 0.32))
+	title.add_theme_color_override("font_outline_color", Color(1, 1, 1))
+	title.add_theme_constant_override("outline_size", 6)
+	root.add_child(title)
+
+	var total := int(elapsed_ms / 1000)
+	var hh := total / 3600
+	var mm := (total % 3600) / 60
+	var ss := total % 60
+	var time_label := Label.new()
+	time_label.text = "%d시간 %d분 %d초" % [hh, mm, ss]
+	time_label.size = Vector2(vp.x, 90.0)
+	time_label.position = Vector2(0.0, vp.y * 0.44)
+	time_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	time_label.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
+	time_label.add_theme_font_size_override("font_size", 56)
+	time_label.add_theme_color_override("font_color", Color(0.10, 0.14, 0.28))
+	time_label.add_theme_color_override("font_outline_color", Color(1, 1, 1))
+	time_label.add_theme_constant_override("outline_size", 7)
+	root.add_child(time_label)
+
+	var tw := create_tween()
+	tw.tween_property(root, "modulate:a", 1.0, 1.2)
 
 
 ## 스크린샷 캡처 후 종료 (godot ... -- --capture 로 실행 시)
